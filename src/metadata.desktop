@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=Blender login
+Description=SDDM theme that look like blender startup
+Author=Stachenn
+Copyright=GNU General Public License v3.0
+License=GNU General Public License v3.0
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/Stachenn/Blender-Sddm-Theme/
+Screenshot=../res/minmalized.png
+MainScript=Main.qml
+Email=null
+Theme-Id=blenderLoginSddm
+Theme-API=2.0
+QtVersion=6
