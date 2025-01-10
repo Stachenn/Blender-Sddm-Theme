@@ -17,7 +17,6 @@ Rectangle{
   }
   Fullscreen{
     id: fullscreenbutton
-    bt.onClicked: {fullscreenscript(bt.checked)}
   }
   DebugLog {
     id: debug

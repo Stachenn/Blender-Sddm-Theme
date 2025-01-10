@@ -7,27 +7,22 @@ Rectangle{
 
   property alias bt : bt
   property alias anim : anim
-  property string fullscreenimg: "../res/fullscreen.png"
-  property string minimalizedimg: "../res/minimalized.png"
+  property bool disableButton: false
 
-  function fullscreenscript(checked){
+  function changeImages(checked){
     if (checked){
-      mainImage.source = "../res/fullscreen.png"
-      fullscreenbutton.x = 435
-      fullscreenbutton.y = 10
+      bt.x = 435
+      bt.y = 10
       fullscreenbutton.bt.width = 52
       fullscreenbutton.bt.height = 52
 
-      anim.running = true
+      mainImage.source = "../res/fullscreen.png"
     }
     else{
-      fullscreenbutton.x = 709
-      fullscreenbutton.y = 301
+      bt.x = 709
+      bt.y = 301
       fullscreenbutton.bt.width = 20
       fullscreenbutton.bt.height = 20
-
-
-      anim.running = true
 
       mainImage.source = "../res/minimalized.png"
     }
@@ -40,15 +35,22 @@ Rectangle{
     width: 20
     height: 20
     id: bt
-    onClicked: {fullscreenscript(checked)}
+    onClicked: {
+      if (!disableButton){
+        anim.running = true
+        disableButton = true
+      }
+    }
   }
 
   Rectangle{
     id: animationfadeio
     width: 1920
     height: 1080
-    x: -435
-    y: -10
+    //x: -435
+    //y: -10
+    x:0
+    y:0
     color: "#000000"
     opacity: 0
 
@@ -58,7 +60,7 @@ Rectangle{
       easing.type: Easing.InBounce
       to: 1
       from: 0
-      onFinished: animm.running = true
+      onFinished: {animm.running = true; changeImages(bt.checked)}
       target: animationfadeio
       duration: 3000
     }
@@ -68,6 +70,7 @@ Rectangle{
       easing.type: Easing.InBounce
       to: 0
       from: 1
+      onFinished: {disableButton = false}
       target: animationfadeio
       duration: 3000
     }
