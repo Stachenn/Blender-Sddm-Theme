@@ -8,7 +8,7 @@ Rectangle {
     property string color
     property int posY
     property int posX
-    //Definition of property aka varibles
+    // Definition of property aka varibles
 
     function log(tex){
         consold.text += tex
@@ -16,8 +16,9 @@ Rectangle {
     function clear(){
       consold.text = ""
     }
-    // debug functions - log : print;
-    // clear : clear buffer
+    // debug functions -
+    // log : Print;
+    // clear : Clear buffer
 
     Label{
       id:consold
@@ -29,5 +30,5 @@ Rectangle {
       color: debug.color
       text: ""
     }
-    // Output 
+    // Output
 }

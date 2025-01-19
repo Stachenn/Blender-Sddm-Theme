@@ -2,18 +2,18 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import SddmComponents 2.0
 // i hate this lib
+// just kidding ;)
 
 Rectangle{
   id: main
   property bool lastState: false
 
-  // /\ Definition property`s aka varibles
+  // Definition property`s aka varibles
 
   FontLoader {
     id: interfont
     source: "../res/fonts/Inter.ttf"
   }
-
   Image {
     id: mainImage
     source: "../res/minimalized.png"
@@ -30,7 +30,7 @@ Rectangle{
   SessionSelection{
     id:sessionSelection
   }
-  // /\ Initialization included files & background & font
+  // Initialization included files & background & font
 
   Button{
     id: ti
@@ -47,5 +47,5 @@ Rectangle{
     posY: 540
     color: "white"
   }
-  // /\ debug stuff`s
+  // Debug stuff`s
 }

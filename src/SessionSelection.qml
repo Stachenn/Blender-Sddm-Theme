@@ -51,5 +51,5 @@ Rectangle {
 
     index: sessionModel.lastIndex
   }
-  //Selector
+  // Selector
 }

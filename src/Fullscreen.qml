@@ -25,11 +25,11 @@ Rectangle{
       bt.y = 301
       fullscreenbutton.bt.width = 20
       fullscreenbutton.bt.height = 20
-      //bt - fullscreen button
+      // bt - Fullscreen button
       mainImage.source = "../res/minimalized.png"
     }
   }
-  //animation changing func
+  // Animation changing func
 
   CheckBox{
     id: bt
@@ -48,7 +48,7 @@ Rectangle{
       }
     }
   }
-  // fullscreen Button
+  // Fullscreen Button
 
   Rectangle{
     id: animationfadeio
