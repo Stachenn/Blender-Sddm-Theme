@@ -4,18 +4,27 @@ import SddmComponents 2.0
 
 Rectangle {
   id: sessionSelection
-  
+
   Component {
       id: defaultRowDelegate
       Text {
+            id: modelText
+
             rotation: 90
+
             anchors.fill: parent
             anchors.margins: 3 + sessionss.borderWidth + (LayoutMirroring.enabled ? arrow.width : 0)
+
             verticalAlignment: Text.AlignVCenter
+
             color: "#cbcbcb"
+
             text:parent.modelItem.name
       }
   }
+  // Definition of SDDM row delegate
+  // - aka Session selection
+
   ComboBox{
     id: sessionss
 
@@ -26,19 +35,21 @@ Rectangle {
     menuColor: "#181818"
     textColor: "#cbcbcb"
     arrowColor: "#181818"
+    borderWidth: 3
 
     font:interfont
-    borderWidth: 3
+
 
     height: 15*15
     width: 25
     x: 300
     y: -68
+    rotation: -90
 
     model: sessionModel
-    rotation: -90
     rowDelegate: defaultRowDelegate
 
     index: sessionModel.lastIndex
   }
+  //Selector
 }
