@@ -1,9 +1,9 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import SddmComponents 2.0
 
 Rectangle {
   id: root
-
   function loginfunc(username, pass, sessionid) {
     sddm.login(username, pass, sessionid)
   }
@@ -19,14 +19,19 @@ Rectangle {
     y: 578
   }
 
-  TextInput{
+  TextBox{
     id: loginInput
+    //cursorVisible: true
+    textColor: "#cbcbcb"
 
-    color: "#cbcbcb"
-    cursorVisible: true
+    focusColor: "#181818"
+    borderColor: "#181818"
+    hoverColor: "#181818"
+    color: "#181818"
+    font.family: interfont.name
 
-    x: 1025
-    y: 578
+    x: 1020
+    y: 572
 
     KeyNavigation.tab: passwordInput
     KeyNavigation.down: passwordInput
@@ -37,21 +42,24 @@ Rectangle {
 
     color: "#17173e"
 
-
     width: passwordInput.contentWidth
     height: passwordInput.contentHeight
     x: 1042
-    y: 600
+    y: 620
 
   }
-  TextInput{
+  TextBox{
     id: passwordInput
 
-    x: 1042
-    y: 600
+    x: 1040
+    y: 594
+    textColor: "#cbcbcb"
+    font.family: interfont.name
 
-    color: "#cbcbcb"
-    cursorVisible: true
+    focusColor: "#181818"
+    borderColor: "#181818"
+    hoverColor: "#181818"
+    color: "#181818"
 
     KeyNavigation.up: loginInput
     KeyNavigation.tab: loginInput
