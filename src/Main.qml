@@ -7,7 +7,6 @@ import SddmComponents 2.0
 Rectangle{
   id: main
   property bool lastState: false
-
   // Definition property`s aka varibles
 
   FontLoader {

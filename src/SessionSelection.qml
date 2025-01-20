@@ -8,18 +8,18 @@ Rectangle {
   Component {
       id: defaultRowDelegate
       Text {
-            id: modelText
+          id: modelText
 
-            rotation: 90
+          rotation: 90
 
-            anchors.fill: parent
-            anchors.margins: 3 + sessionss.borderWidth + (LayoutMirroring.enabled ? arrow.width : 0)
+          anchors.fill: parent
+          anchors.margins: 3 + sessionss.borderWidth + (LayoutMirroring.enabled ? arrow.width : 0)
 
-            verticalAlignment: Text.AlignVCenter
+          verticalAlignment: Text.AlignVCenter
 
-            color: "#cbcbcb"
+          color: "#cbcbcb"
 
-            text:parent.modelItem.name
+          text: parent.modelItem.name
       }
   }
   // Definition of SDDM row delegate

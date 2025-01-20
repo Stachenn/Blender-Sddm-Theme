@@ -4,12 +4,15 @@ import SddmComponents 2.0
 
 Rectangle {
   id: root
+
+  property alias loginButton : loginButton
+
   function loginfunc(username, pass, sessionid) {
     sddm.login(username, pass, sessionid)
   }
 
   Rectangle{
-    id:loginrect
+    id: loginrect
 
     color: "#17173e"
 
@@ -21,13 +24,13 @@ Rectangle {
 
   TextBox{
     id: loginInput
-    //cursorVisible: true
-    textColor: "#cbcbcb"
 
+    color: "#181818"
+    textColor: "#cbcbcb"
     focusColor: "#181818"
     borderColor: "#181818"
     hoverColor: "#181818"
-    color: "#181818"
+
     font.family: interfont.name
 
     x: 1020
@@ -53,13 +56,14 @@ Rectangle {
 
     x: 1040
     y: 594
-    textColor: "#cbcbcb"
-    font.family: interfont.name
 
+    color: "#181818"
+    textColor: "#cbcbcb"
     focusColor: "#181818"
     borderColor: "#181818"
     hoverColor: "#181818"
-    color: "#181818"
+
+    font.family: interfont.name
 
     KeyNavigation.up: loginInput
     KeyNavigation.tab: loginInput
@@ -70,8 +74,13 @@ Rectangle {
   Button {
     id: loginButton
 
-    x: 960
-    y: 540
+    x: 967
+    y: 625
+
+    width:60
+    height:15
+
+    opacity: 0
 
     onClicked: loginfunc(loginInput.text, passwordInput.text, 1)
 
