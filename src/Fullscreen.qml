@@ -18,6 +18,12 @@ Rectangle{
       fullscreenbutton.bt.width = 52
       fullscreenbutton.bt.height = 52
 
+      loginForm.loginButton.x = 1100
+      loginForm.loginButton.y = 760
+
+      loginForm.loginButton.width = 170
+      loginForm.loginButton.height = 50
+
       mainImage.source = "../res/fullscreen.png"
     }
     else{
@@ -25,6 +31,14 @@ Rectangle{
       bt.y = 301
       fullscreenbutton.bt.width = 20
       fullscreenbutton.bt.height = 20
+
+      loginForm.loginButton.x = 967
+      loginForm.loginButton.y = 625
+
+      loginForm.loginButton.width = 60
+      loginForm.loginButton.height = 15
+
+
       // bt - Fullscreen button
       mainImage.source = "../res/minimalized.png"
     }
