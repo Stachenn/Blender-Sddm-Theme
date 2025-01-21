@@ -6,6 +6,8 @@ Rectangle {
   id: root
 
   property alias loginButton : loginButton
+  property alias passwordInput : passwordInput
+  property alias loginInput : loginInput
 
   function loginfunc(username, pass, sessionid) {
     sddm.login(username, pass, sessionid)
@@ -32,9 +34,10 @@ Rectangle {
     hoverColor: "#181818"
 
     font.family: interfont.name
+    font.pixelSize: 13
 
     x: 1020
-    y: 572
+    y: 573
 
     KeyNavigation.tab: passwordInput
     KeyNavigation.down: passwordInput
@@ -47,15 +50,15 @@ Rectangle {
 
     width: passwordInput.contentWidth
     height: passwordInput.contentHeight
-    x: 1042
-    y: 620
+    x: 1035
+    y: 620.5
 
   }
   TextBox{
     id: passwordInput
 
     x: 1040
-    y: 594
+    y: 593.5
 
     color: "#181818"
     textColor: "#cbcbcb"
@@ -64,6 +67,8 @@ Rectangle {
     hoverColor: "#181818"
 
     font.family: interfont.name
+    font.pixelSize: 13
+
 
     KeyNavigation.up: loginInput
     KeyNavigation.tab: loginInput
