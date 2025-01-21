@@ -30,7 +30,9 @@ Rectangle{
     id:sessionSelection
   }
   // Initialization included files & background & font
-
+  ActionButtons{
+    id: actionButtons
+  }
   Button{
     id: ti
     x: 960
