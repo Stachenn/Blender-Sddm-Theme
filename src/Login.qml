@@ -13,17 +13,6 @@ Rectangle {
     sddm.login(username, pass, sessionid)
   }
 
-  Rectangle{
-    id: loginrect
-
-    color: "#17173e"
-
-    width: loginInput.contentWidth
-    height: loginInput.contentHeight
-    x: 1025
-    y: 578
-  }
-
   TextBox{
     id: loginInput
 
@@ -42,23 +31,11 @@ Rectangle {
     KeyNavigation.tab: passwordInput
     KeyNavigation.down: passwordInput
   }
-
-  Rectangle{
-    id: passwordrect
-
-    color: "#17173e"
-
-    width: passwordInput.contentWidth
-    height: passwordInput.contentHeight
-    x: 1035
-    y: 620.5
-
-  }
   TextBox{
     id: passwordInput
 
     x: 1040
-    y: 593.5
+    y: 593
 
     color: "#181818"
     textColor: "#cbcbcb"
@@ -68,7 +45,6 @@ Rectangle {
 
     font.family: interfont.name
     font.pixelSize: 13
-
 
     KeyNavigation.up: loginInput
     KeyNavigation.tab: loginInput
@@ -87,7 +63,7 @@ Rectangle {
 
     opacity: 0
 
-    onClicked: loginfunc(loginInput.text, passwordInput.text, 1)
+    onClicked: loginfunc(loginInput.text, passwordInput.text, sessionSelection.sessionss.index)
 
     KeyNavigation.up: passwordInput
   }
