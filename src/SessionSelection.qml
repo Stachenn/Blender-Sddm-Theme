@@ -5,6 +5,8 @@ import SddmComponents 2.0
 Rectangle {
   id: sessionSelection
 
+  property alias sessionss : sessionss
+
   Component {
       id: defaultRowDelegate
       Text {
@@ -39,11 +41,10 @@ Rectangle {
 
     font:interfont
 
-
-    height: 15*15
+    height: 225
     width: 25
     x: 300
-    y: -68
+    y: -69
     rotation: -90
 
     model: sessionModel
