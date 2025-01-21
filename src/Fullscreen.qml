@@ -8,7 +8,7 @@ Rectangle{
   property alias bt : bt
   property alias anim : anim
   property bool disableButton: false
-  property int animationTime: 200
+  property int animationTime: 1500
   // Definition of property aka varibles
 
   function changeImages(checked){
@@ -40,6 +40,18 @@ Rectangle{
       actionButtons.rebootbt.height = 40
       actionButtons.rebootbt.width = 160
 
+      loginForm.passwordInput.x = 1300
+      loginForm.passwordInput.y = 720
+      loginForm.passwordInput.width = 160
+      loginForm.passwordInput.height = 40
+      loginForm.passwordInput.font.pixelSize = 30
+
+      loginForm.loginInput.x = 1240
+      loginForm.loginInput.y = 668
+      loginForm.loginInput.width = 160
+      loginForm.loginInput.height = 40
+      loginForm.loginInput.font.pixelSize = 30
+
     }
     else{
       mainImage.source = "../res/minimalized.png"
@@ -62,11 +74,26 @@ Rectangle{
       actionButtons.hibernatebt.x = 970
       actionButtons.hibernatebt.y = 668
       actionButtons.hibernatebt.height = 12
+      actionButtons.hibernatebt.width = 80
 
       actionButtons.rebootbt.x = 970
       actionButtons.rebootbt.y = 687
       actionButtons.rebootbt.height = 12
+      actionButtons.rebootbt.width = 80
+
+      loginForm.loginInput.height = 30
+      loginForm.loginInput.width = 80
+      loginForm.loginInput.x = 1020
+      loginForm.loginInput.y = 573
+      loginForm.loginInput.font.pixelSize = 13
+
+      loginForm.passwordInput.height = 30
+      loginForm.passwordInput.width = 80
+      loginForm.passwordInput.x = 1040
+      loginForm.passwordInput.y = 593
+      loginForm.passwordInput.font.pixelSize = 13
       // bt - Fullscreen button
+
     }
   }
   // Animation changing func
