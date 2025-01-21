@@ -13,6 +13,8 @@ Rectangle{
 
   function changeImages(checked){
     if (checked){
+      mainImage.source = "../res/fullscreen.png"
+
       bt.x = 435
       bt.y = 10
       fullscreenbutton.bt.width = 52
@@ -20,13 +22,28 @@ Rectangle{
 
       loginForm.loginButton.x = 1100
       loginForm.loginButton.y = 760
-
       loginForm.loginButton.width = 170
       loginForm.loginButton.height = 50
 
-      mainImage.source = "../res/fullscreen.png"
+      actionButtons.powerbt.x = 1099
+      actionButtons.powerbt.y = 810
+      actionButtons.powerbt.height = 40
+      actionButtons.powerbt.width = 160
+
+      actionButtons.hibernatebt.x = 1099
+      actionButtons.hibernatebt.y = 855
+      actionButtons.hibernatebt.height = 40
+      actionButtons.hibernatebt.width = 220
+
+      actionButtons.rebootbt.x = 1099
+      actionButtons.rebootbt.y = 902
+      actionButtons.rebootbt.height = 40
+      actionButtons.rebootbt.width = 160
+
     }
     else{
+      mainImage.source = "../res/minimalized.png"
+
       bt.x = 709
       bt.y = 301
       fullscreenbutton.bt.width = 20
@@ -34,13 +51,22 @@ Rectangle{
 
       loginForm.loginButton.x = 967
       loginForm.loginButton.y = 625
-
       loginForm.loginButton.width = 60
       loginForm.loginButton.height = 15
 
+      actionButtons.powerbt.x = 970
+      actionButtons.powerbt.y = 648
+      actionButtons.powerbt.height = 12
+      actionButtons.powerbt.width = 80
 
+      actionButtons.hibernatebt.x = 970
+      actionButtons.hibernatebt.y = 668
+      actionButtons.hibernatebt.height = 12
+
+      actionButtons.rebootbt.x = 970
+      actionButtons.rebootbt.y = 687
+      actionButtons.rebootbt.height = 12
       // bt - Fullscreen button
-      mainImage.source = "../res/minimalized.png"
     }
   }
   // Animation changing func

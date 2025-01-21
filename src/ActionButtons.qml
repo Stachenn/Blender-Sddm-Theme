@@ -4,9 +4,20 @@ import SddmComponents 2.0
 
 Rectangle {
   id: buttons
+  property alias powerbt : powerbt
+  property alias hibernatebt : hibernatebt
+  property alias rebootbt : rebootbt
+  property int buttonOpacity: 0
 
   Button{
     id: powerbt
+
+    x: 970
+    y: 648
+    height: 12
+
+    opacity: buttonOpacity
+
     onClicked: {
       if (GreeterProxy.canPowerOff() == true){
         GreeterProxy.powerOff()
@@ -15,6 +26,13 @@ Rectangle {
   }
   Button{
     id: hibernatebt
+
+    x: 970
+    y: 668
+    height: 12
+
+    opacity: buttonOpacity
+
     onClicked: {
       if (GreeterProxy.canHibernate() == true){
         GreeterProxy.hibernate()
@@ -23,6 +41,13 @@ Rectangle {
   }
   Button{
     id: rebootbt
+
+    x: 970
+    y: 687
+    height: 12
+
+    opacity: buttonOpacity
+
     onClicked: {
       if (GreeterProxy.canReboot() == true){
         GreeterProxy.reboot()
