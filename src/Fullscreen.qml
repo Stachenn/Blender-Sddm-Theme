@@ -52,6 +52,12 @@ Rectangle{
       loginForm.loginInput.height = 40
       loginForm.loginInput.font.pixelSize = 30
 
+      sessionSelection.sessionss.borderColor = "#301850"
+      sessionSelection.sessionss.height = 225
+      sessionSelection.sessionss.width = 25
+      sessionSelection.sessionss.x = 500
+      sessionSelection.sessionss.y = 440
+
     }
     else{
       mainImage.source = "../res/minimalized.png"
@@ -92,6 +98,12 @@ Rectangle{
       loginForm.passwordInput.x = 1040
       loginForm.passwordInput.y = 593
       loginForm.passwordInput.font.pixelSize = 13
+
+      sessionSelection.sessionss.height = 225
+      sessionSelection.sessionss.width = 25
+      sessionSelection.sessionss.x = 300
+      sessionSelection.sessionss.y = -69
+      sessionSelection.sessionss.y = "#313030"
       // bt - Fullscreen button
 
     }
