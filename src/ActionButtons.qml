@@ -7,7 +7,7 @@ Rectangle {
   property alias powerbt : powerbt
   property alias hibernatebt : hibernatebt
   property alias rebootbt : rebootbt
-  property int buttonOpacity: 0
+  property int buttonOpacity: 1
 
   Button{
     id: powerbt
@@ -19,8 +19,8 @@ Rectangle {
     opacity: buttonOpacity
 
     onClicked: {
-      if (GreeterProxy.canPowerOff() == true){
-        GreeterProxy.powerOff()
+      if (sddm.canPowerOff == true){
+        sddm.powerOff()
       }
     }
   }
@@ -34,8 +34,8 @@ Rectangle {
     opacity: buttonOpacity
 
     onClicked: {
-      if (GreeterProxy.canHibernate() == true){
-        GreeterProxy.hibernate()
+      if (sddm.canHibernate == true){
+        sddm.hibernate()
       }
     }
   }
@@ -49,8 +49,8 @@ Rectangle {
     opacity: buttonOpacity
 
     onClicked: {
-      if (GreeterProxy.canReboot() == true){
-        GreeterProxy.reboot()
+      if (sddm.canReboot == true){
+        sddm.reboot()
       }
     }
   }
