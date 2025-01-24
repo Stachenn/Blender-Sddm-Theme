@@ -50,7 +50,51 @@ Rectangle {
     KeyNavigation.tab: loginInput
     KeyNavigation.down: loginButton
   }
+  Text{
+    id: loginFailedInfo
+    text: "Wrong password/username"
+    color: "#FF0000"
+    font.family: interfont.name
+    font.pixelSize: 80
+    x: 400
+    y: 200
+    opacity: 1
+  }
 
+  PropertyAnimation {
+    id: loginFailedAnim
+    properties: "opacity"
+
+    easing.type: Easing.InBounce
+    to: 1
+    from: 0
+
+    onFinished: {loginFailedAnimm.running = true}
+
+    target: loginFailedInfo
+    duration: 1000 / 2
+  }
+  PropertyAnimation {
+    id: loginFailedAnimm
+    properties: "opacity"
+
+    easing.type: Easing.InBounce
+    to: 0
+    from: 1
+
+
+    target: loginFailedInfo
+    duration: 1000 / 2
+  }
+
+  Connections {
+		target: sddm
+
+		function onLoginFailed()
+		{
+			loginFailedAnim.running = true
+		}
+  }
 
   Button {
     id: loginButton
