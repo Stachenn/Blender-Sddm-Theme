@@ -42,22 +42,22 @@ Rectangle{
 
       loginForm.passwordInput.x = 1300
       loginForm.passwordInput.y = 720
-      loginForm.passwordInput.width = 160
-      loginForm.passwordInput.height = 40
       loginForm.passwordInput.font.pixelSize = 30
+
+      loginForm.showPassword.width = 40
+      loginForm.showPassword.height = 40
+      loginForm.showPassword.x = 1098
+      loginForm.showPassword.y = 712
 
       loginForm.loginInput.x = 1240
       loginForm.loginInput.y = 668
-      loginForm.loginInput.width = 160
-      loginForm.loginInput.height = 40
       loginForm.loginInput.font.pixelSize = 30
 
-      sessionSelection.sessionss.borderColor = "#301850"
+      //sessionSelection.sessionss.borderColor = "#301850"
       sessionSelection.sessionss.height = 225
       sessionSelection.sessionss.width = 25
       sessionSelection.sessionss.x = 500
       sessionSelection.sessionss.y = 440
-
     }
     else{
       mainImage.source = "../res/minimalized.png"
@@ -87,23 +87,24 @@ Rectangle{
       actionButtons.rebootbt.height = 12
       actionButtons.rebootbt.width = 80
 
-      loginForm.loginInput.height = 30
-      loginForm.loginInput.width = 80
-      loginForm.loginInput.x = 1020
-      loginForm.loginInput.y = 573
+      loginForm.loginInput.x = 1024
+      loginForm.loginInput.y = 580
       loginForm.loginInput.font.pixelSize = 13
 
-      loginForm.passwordInput.height = 30
-      loginForm.passwordInput.width = 80
-      loginForm.passwordInput.x = 1040
-      loginForm.passwordInput.y = 593
+      loginForm.showPassword.width = 35
+      loginForm.showPassword.height = 21
+      loginForm.showPassword.x = 962
+      loginForm.showPassword.y = 597
+
+      loginForm.passwordInput.x = 1050
+      loginForm.passwordInput.y = 601
       loginForm.passwordInput.font.pixelSize = 13
 
       sessionSelection.sessionss.height = 225
       sessionSelection.sessionss.width = 25
       sessionSelection.sessionss.x = 300
       sessionSelection.sessionss.y = -69
-      sessionSelection.sessionss.y = "#313030"
+      //sessionSelection.sessionss.borderColor = "#313030"
       // bt - Fullscreen button
 
     }
@@ -123,6 +124,7 @@ Rectangle{
     onClicked: {
       if (!disableButton){
         anim.running = true
+        sessionSelectionAnimation.running = true
         disableButton = true
       }
     }
@@ -134,8 +136,8 @@ Rectangle{
 
     width: 1920
     height: 1080
-    x:0
-    y:0
+    x: 0
+    y: 0
 
     color: "#000000"
     opacity: 0
@@ -148,9 +150,34 @@ Rectangle{
       to: 1
       from: 0
 
-      onFinished: {animm.running = true; changeImages(bt.checked)}
+      onFinished: {changeImages(bt.checked); animm.running = true}
 
       target: animationfadeio
+
+      duration: animationTime / 2
+    }
+    PropertyAnimation {
+      id: sessionSelectionAnimation
+      properties: "opacity"
+
+      easing.type: Easing.InBounce
+      to: 0
+      from: 1
+
+      target: sessionSelection
+      onFinished: {sessionSelectionAnimationn.running = true}
+      duration: animationTime / 2
+    }
+    PropertyAnimation {
+      id: sessionSelectionAnimationn
+      properties: "opacity"
+
+      easing.type: Easing.InBounce
+      to: 1
+      from: 0
+
+      target: sessionSelection
+
       duration: animationTime / 2
     }
     PropertyAnimation {
@@ -164,6 +191,7 @@ Rectangle{
       onFinished: {disableButton = false}
 
       target: animationfadeio
+
       duration: animationTime / 2
     }
   }
