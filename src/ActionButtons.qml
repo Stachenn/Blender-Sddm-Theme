@@ -7,7 +7,7 @@ Rectangle {
   property alias powerbt : powerbt
   property alias hibernatebt : hibernatebt
   property alias rebootbt : rebootbt
-  property int buttonOpacity: 1
+  property int buttonOpacity: 0
 
   Button{
     id: powerbt

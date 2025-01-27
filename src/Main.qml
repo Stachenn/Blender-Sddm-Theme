@@ -17,13 +17,12 @@ Rectangle{
     id: mainImage
     source: "../res/minimalized.png"
   }
-
   Login {
     id: loginForm
   }
 
   Fullscreen{
-    id: fullScreenButton
+    id: fullscreenButton
   }
 
   SessionSelection{
@@ -34,13 +33,16 @@ Rectangle{
     id: actionButtons
   }
   Button{
+
     id: ti
+    opacity: 0
     x: 960
     y: 900
     property var s: []
     onClicked: debug.log()
   }
   DebugLog {
+
     id: debug
     size: 30
 
