@@ -8,40 +8,54 @@ Rectangle {
   property alias loginButton : loginButton
   property alias passwordInput : passwordInput
   property alias loginInput : loginInput
+  property alias showPassword : showPassword
 
   function loginfunc(username, pass, sessionid) {
     sddm.login(username, pass, sessionid)
   }
 
-  TextBox{
+  TextInput{
     id: loginInput
 
-    color: "#181818"
-    textColor: "#cbcbcb"
-    focusColor: "#181818"
-    borderColor: "#181818"
-    hoverColor: "#181818"
+    color: "#cbcbcb"
 
     font.family: interfont.name
     font.pixelSize: 13
 
-    x: 1020
-    y: 573
+    x: 1024
+    rightPadding: 50
+    wrapMode: TextInput.NoWrap
+    y: 580
 
     KeyNavigation.tab: passwordInput
     KeyNavigation.down: passwordInput
   }
-  TextBox{
+
+  CheckBox{
+    id: showPassword
+    opacity: 0
+    x: 962
+    y: 597
+    onClicked: {
+      if (passwordInput.echoMode == TextInput.Password){
+        passwordInput.echoMode = TextInput.Normal
+      }
+      else{
+        passwordInput.echoMode = TextInput.Password
+      }
+    }
+  }
+  TextInput{
     id: passwordInput
 
-    x: 1040
-    y: 593
+    x: 1050
+    wrapMode: TextInput.NoWrap
+    rightPadding: 50
+    y: 601
 
-    color: "#181818"
-    textColor: "#cbcbcb"
-    focusColor: "#181818"
-    borderColor: "#181818"
-    hoverColor: "#181818"
+    color: "#cbcbcb"
+
+    echoMode: TextInput.Normal
 
     font.family: interfont.name
     font.pixelSize: 13
@@ -54,11 +68,12 @@ Rectangle {
     id: loginFailedInfo
     text: "Wrong password/username"
     color: "#FF0000"
+
     font.family: interfont.name
     font.pixelSize: 80
     x: 400
     y: 200
-    opacity: 1
+    opacity: 0
   }
 
   PropertyAnimation {
